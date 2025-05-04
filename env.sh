@@ -15,9 +15,9 @@ alias covmat="gcov -p -o Matrix Matrix/SquareMatrix.cpp"
 alias covapp="gcov -p -o . main.cpp"
 
 # For leak-check
-alias lcmat="memcheck_matrix"
-alias lcvec="memcheck_vector"
-alias lcapp="memcheck_app"
+alias lcmat="make memcheck_matrix"
+alias lcvec="make memcheck_vector"
+alias lcapp="make memcheck_app"
 
 # For clean
 alias mcl="make clean"

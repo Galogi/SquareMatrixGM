@@ -106,7 +106,7 @@ make clean
 
 Run:
 ```bash
-source code/env.sh
+source env.sh
 ```
 
 Then you can use like:
