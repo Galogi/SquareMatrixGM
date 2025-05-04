@@ -119,13 +119,24 @@
 		 double operator!() const; ///< Determinant
  
 		 // === Comparison Operators (based on total sum of elements) ===
- 
-		 bool operator==(const SquareMatrix& other) const;
-		 bool operator!=(const SquareMatrix& other) const;
-		 bool operator<(const SquareMatrix& other) const;
-		 bool operator>(const SquareMatrix& other) const;
-		 bool operator<=(const SquareMatrix& other) const;
-		 bool operator>=(const SquareMatrix& other) const;
+		 bool operator==(const SquareMatrix& other) const {
+			return std::abs(this->sum() - other.sum()) < 1e-9;
+		}
+		bool operator!=(const SquareMatrix& other) const {
+			return !(*this == other);
+		}
+		bool operator<(const SquareMatrix& other) const {
+			return this->sum() < other.sum();
+		}
+		bool operator>(const SquareMatrix& other) const {
+			return this->sum() > other.sum();
+		}
+		bool operator<=(const SquareMatrix& other) const {
+			return !(*this > other);
+		}
+		bool operator>=(const SquareMatrix& other) const {
+			return !(*this < other);
+		}
  
 		 // === Output Operator ===
  
